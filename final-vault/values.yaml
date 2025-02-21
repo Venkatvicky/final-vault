@@ -19,3 +19,8 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
+
+storage:
+  type: "raft"  # Use Raft for storage backend
+  path: "/vault/data"
+  size: "10Gi"

@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: hashicorp/vault
+  tag: "1.13.3"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8200
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: vault.example.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
